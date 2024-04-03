@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileService {
-    public List<TeslaSales> readFile(String filename) throws IOException {
-        List<TeslaSales> teslaSales = new ArrayList<>();
+    public List<TeslaSale> readFile(String filename) throws IOException {
+        List<TeslaSale> teslaSales = new ArrayList<>();
 
         BufferedReader reader = new BufferedReader(new FileReader(filename));
 
@@ -18,9 +18,9 @@ public class FileService {
         while ((line = reader.readLine()) != null) {
             String[] columns = line.split(",");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-yy");
-            TeslaSales teslaSalesTemp = new TeslaSales(YearMonth.parse(columns[0], formatter),
+            TeslaSale teslaSaleTemp = new TeslaSale(YearMonth.parse(columns[0], formatter),
                                                        Integer.parseInt(columns[1]));
-            teslaSales.add(teslaSalesTemp);
+            teslaSales.add(teslaSaleTemp);
         }
         return teslaSales;
 

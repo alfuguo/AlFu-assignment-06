@@ -1,7 +1,6 @@
 import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
 
-public class TeslaSales {
+public class TeslaSale {
 
     private final YearMonth yearMonth;
 
@@ -9,7 +8,7 @@ public class TeslaSales {
 
     //all Sales reports' data are final, can not be changed, don't need setter.
 
-    public TeslaSales(YearMonth yearMonth, Integer salesAmount) {
+    public TeslaSale(YearMonth yearMonth, Integer salesAmount) {
         this.yearMonth = yearMonth;
         this.salesAmount = salesAmount;
     }
